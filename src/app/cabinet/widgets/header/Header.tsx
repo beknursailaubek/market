@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className="flex items-center justify-between h-[70px] w-full py-[15px] px-[30px] bg-white">
+    <div className="relative z-100 flex items-center justify-between h-[70px] w-full py-[15px] px-[30px] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
       <div className="flex items-center">
         <svg width={24} height={24} className="mr-[25px]">
           <use xlinkHref="/images/icons/bars.svg#bars"></use>
