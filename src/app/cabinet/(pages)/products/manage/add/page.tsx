@@ -337,7 +337,7 @@ const ProductsManageAddPage = () => {
                 Тип стеллажа <span className="text-[#EF3826]">*</span>
               </label>
               <select
-                className={`w-[25%] p-[16px] bg-[#F5F6FA] border-[0.6px] border-[#D5D5D5] rounded-[4px] outline-none ${
+                className={`w-[20%] p-[16px] bg-[#F5F6FA] border-[0.6px] border-[#D5D5D5] rounded-[4px] outline-none ${
                   errors.shelfType ? "border-red-500" : ""
                 }`}
                 id="shelfType"
@@ -356,10 +356,10 @@ const ProductsManageAddPage = () => {
             {/* Бренд */}
             <div className="mb-[18px]">
               <label className="block mb-[5px] text-[14px] text-[#606060] font-extrabold" htmlFor="brand">
-                Бренд <span className="text-[#EF3826]">*</span>
+                Бренд
               </label>
               <input
-                className={`w-[25%] p-[16px] bg-[#F5F6FA] border-[0.6px] border-[#D5D5D5] rounded-[4px] outline-none ${
+                className={`w-[20%] p-[16px] bg-[#F5F6FA] border-[0.6px] border-[#D5D5D5] rounded-[4px] outline-none ${
                   errors.brand ? "border-red-500" : ""
                 }`}
                 placeholder="Выберите"
@@ -374,10 +374,10 @@ const ProductsManageAddPage = () => {
             </div>
 
             {/* Габаритные размеры */}
-            <div className="flex gap-[20px] mb-[18px]">
-              <div className="w-[30%]">
+            <div className="flex gap-[80px] mb-[18px]">
+              <div className="w-[20%]">
                 <label className="block mb-[5px] text-[14px] text-[#606060] font-extrabold" htmlFor="height">
-                  Высота, см <span className="text-[#EF3826]">*</span>
+                  Высота, см
                 </label>
                 <input
                   className={`w-full p-[16px] bg-[#F5F6FA] border-[0.6px] border-[#D5D5D5] rounded-[4px] outline-none ${
@@ -392,9 +392,9 @@ const ProductsManageAddPage = () => {
                   }}
                 />
               </div>
-              <div className="w-[30%]">
+              <div className="w-[20%]">
                 <label className="block mb-[5px] text-[14px] text-[#606060] font-extrabold" htmlFor="length">
-                  Длина, см <span className="text-[#EF3826]">*</span>
+                  Длина, см
                 </label>
                 <input
                   className={`w-full p-[16px] bg-[#F5F6FA] border-[0.6px] border-[#D5D5D5] rounded-[4px] outline-none ${
@@ -409,9 +409,9 @@ const ProductsManageAddPage = () => {
                   }}
                 />
               </div>
-              <div className="w-[30%]">
+              <div className="w-[20%]">
                 <label className="block mb-[5px] text-[14px] text-[#606060] font-extrabold" htmlFor="width">
-                  Ширина / Глубина, см <span className="text-[#EF3826]">*</span>
+                  Ширина / Глубина, см
                 </label>
                 <input
                   className={`w-full p-[16px] bg-[#F5F6FA] border-[0.6px] border-[#D5D5D5] rounded-[4px] outline-none ${
@@ -431,10 +431,10 @@ const ProductsManageAddPage = () => {
             {/* Цвета */}
             <div className="mb-[18px]">
               <label className="block mb-[5px] text-[14px] text-[#606060] font-extrabold" htmlFor="colors">
-                Цвета <span className="text-[#EF3826]">*</span>
+                Цвета
               </label>
               <select
-                className={`w-[25%] p-[16px] bg-[#F5F6FA] border-[0.6px] border-[#D5D5D5] rounded-[4px] outline-none ${
+                className={`w-[20%] p-[16px] bg-[#F5F6FA] border-[0.6px] border-[#D5D5D5] rounded-[4px] outline-none ${
                   errors.colors ? "border-red-500" : ""
                 }`}
                 id="colors"
@@ -453,10 +453,10 @@ const ProductsManageAddPage = () => {
             {/* Полки */}
             <div className="mb-[18px]">
               <label className="block mb-[5px] text-[14px] text-[#606060] font-extrabold" htmlFor="shelves">
-                Полки <span className="text-[#EF3826]">*</span>
+                Полки
               </label>
               <select
-                className={`w-[25%] p-[16px] bg-[#F5F6FA] border-[0.6px] border-[#D5D5D5] rounded-[4px] outline-none ${
+                className={`w-[20%] p-[16px] bg-[#F5F6FA] border-[0.6px] border-[#D5D5D5] rounded-[4px] outline-none ${
                   errors.shelves ? "border-red-500" : ""
                 }`}
                 id="shelves"
