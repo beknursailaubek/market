@@ -224,6 +224,7 @@ const ProductsManageAddPage = () => {
                 value={formData.availability}
                 onChange={(e) => setFormData({ ...formData, availability: e.target.value })}
               >
+                <option value="">Выберите</option>
                 <option value="in_stock">В наличии</option>
                 <option value="on_order">Под заказ</option>
                 <option value="out_of_stock">Нет в наличии</option>
@@ -241,6 +242,7 @@ const ProductsManageAddPage = () => {
                 value={formData.condition}
                 onChange={(e) => setFormData({ ...formData, condition: e.target.value })}
               >
+                <option value="">Выберите</option>
                 <option value="new">Новый</option>
                 <option value="used">Б/у</option>
               </select>
@@ -270,7 +272,7 @@ const ProductsManageAddPage = () => {
               <button
                 className={`w-[20%] px-[90px] py-[14px] rounded-[12px] text-[18px] text-white transition-colors ${
                   !formData.name || !formData.category || !formData.price
-                    ? "bg-gray-300 cursor-not-allowed"
+                    ? "bg-gray-300"
                     : "bg-[#487fffe7] hover:bg-blue-600"
                 }`}
                 onClick={handleNext}

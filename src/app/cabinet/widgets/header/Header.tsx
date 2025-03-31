@@ -1,4 +1,9 @@
+"use client";
+import { useAuthStore } from "@/store/authStore";
+
 const Header = () => {
+  const { user } = useAuthStore();
+
   return (
     <div className="relative z-100 flex items-center justify-between h-[70px] w-full py-[15px] px-[30px] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
       <div className="flex items-center">
@@ -32,10 +37,17 @@ const Header = () => {
             </div>
           </div>
 
-          <div>
-            <div className="mb-[5px] text-sm font-bold text-[#404040]">Gulbanu</div>
-            <div className="text-xs font-semibold text-[#565656]">Ваш ID: 165287</div>
-          </div>
+          {user ? (
+            <div>
+              <div className="mb-[5px] text-sm font-bold text-[#404040]">{user.name || "Гость"}</div>
+              <div className="text-xs font-semibold text-[#565656]">Ваш ID: {user.id || "Неизвестно"}</div>
+            </div>
+          ) : (
+            <div>
+              <div className="mb-[5px] text-sm font-bold text-[#404040]">Гость</div>
+              <div className="text-xs font-semibold text-[#565656]">Ваш ID:</div>
+            </div>
+          )}
 
           <div className="flex items-center justify-center ml-[8px] border-[0.2px] border-[#5C5C5C] rounded-[50%]">
             <svg width={18} height={18}>
