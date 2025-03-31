@@ -1,4 +1,3 @@
-// src/features/auth/api/authApi.ts
 import { useAuthStore } from "@/store/authStore";
 
 export const login = async (email: string, password: string) => {
@@ -13,7 +12,7 @@ export const login = async (email: string, password: string) => {
     throw new Error(errorData.message || "Ошибка авторизации");
   }
   const res = await response.json();
-  useAuthStore.getState().login({ name: res.user.name, id: res.user.id }); // Update Zustand store
+  useAuthStore.getState().login({ name: res.user.name, id: res.user.id });
   return res;
 };
 
@@ -32,8 +31,22 @@ export const register = async (email: string, password: string) => {
     throw new Error(errorData.message || "Ошибка регистрации");
   }
   const res = await response.json();
-  useAuthStore.getState().login({ name: res.user.name, id: res.user.id }); // Update Zustand store
+  useAuthStore.getState().login({ name: res.user.name, id: res.user.id });
   return res;
+};
+
+export const fetchUserData = async () => {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/user`, {
+    method: "GET",
+    credentials: "include",
+  });
+
+  if (!response.ok) {
+    throw new Error("Ошибка загрузки данных пользователя");
+  }
+
+  const userData = await response.json();
+  return userData;
 };
 
 export const logout = async () => {
@@ -45,5 +58,5 @@ export const logout = async () => {
     throw new Error("Ошибка выхода");
   }
   document.cookie = "";
-  useAuthStore.getState().logout(); // Clear Zustand store
+  useAuthStore.getState().logout();
 };
