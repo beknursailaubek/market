@@ -1,5 +1,6 @@
 "use client";
 import { useAuthStore } from "@/store/authStore";
+import Link from "next/link";
 
 const Header = () => {
   const { user } = useAuthStore();
@@ -27,33 +28,32 @@ const Header = () => {
         {/* <div className="text-sm font-semibold text-[#646464]">Баланс: 10 648 Т</div> */}
 
         <div className="flex items-center">
-          <div className="relative mr-[20px]">
-            <svg width={24} height={26}>
-              <use xlinkHref="/images/icons/notification.svg#notification"></use>
-            </svg>
-
-            <div className="absolute top-[-6px] right-[-6px] w-[16px] h-[16px] flex items-center justify-center box-content text-xs font-bold text-white bg-[#F93C65] border-[1px] border-[#f93c658c] rounded-[50%] ">
-              6
-            </div>
-          </div>
-
           {user ? (
-            <div>
-              <div className="mb-[5px] text-sm font-bold text-[#404040]">{user.name || "Гость"}</div>
-              <div className="text-xs font-semibold text-[#565656]">Ваш ID: {user.id || "Неизвестно"}</div>
-            </div>
-          ) : (
-            <div>
-              <div className="mb-[5px] text-sm font-bold text-[#404040]">Гость</div>
-              <div className="text-xs font-semibold text-[#565656]">Ваш ID:</div>
-            </div>
-          )}
+            <>
+              <div className="relative mr-[20px]">
+                <svg width={24} height={26}>
+                  <use xlinkHref="/images/icons/notification.svg#notification"></use>
+                </svg>
 
-          <div className="flex items-center justify-center ml-[8px] border-[0.2px] border-[#5C5C5C] rounded-[50%]">
-            <svg width={18} height={18}>
-              <use xlinkHref="/images/icons/chevron-down.svg#chevron-down"></use>
-            </svg>
-          </div>
+                <div className="absolute top-[-6px] right-[-6px] w-[16px] h-[16px] flex items-center justify-center box-content text-xs font-bold text-white bg-[#F93C65] border-[1px] border-[#f93c658c] rounded-[50%] ">
+                  6
+                </div>
+              </div>
+
+              <div>
+                <div className="mb-[5px] text-sm font-bold text-[#404040]">{user.name || "Гость"}</div>
+                <div className="text-xs font-semibold text-[#565656]">Ваш ID: {user.id || "∞"}</div>
+              </div>
+
+              <div className="flex items-center justify-center ml-[8px] border-[0.2px] border-[#5C5C5C] rounded-[50%]">
+                <svg width={18} height={18}>
+                  <use xlinkHref="/images/icons/chevron-down.svg#chevron-down"></use>
+                </svg>
+              </div>
+            </>
+          ) : (
+            <Link href="/auth/login">Войти</Link>
+          )}
         </div>
       </div>
     </div>
