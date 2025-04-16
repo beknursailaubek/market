@@ -1,0 +1,1 @@
+export {RequestsList as default} from "@/pages/requests-list"

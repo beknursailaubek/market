@@ -1,0 +1,1 @@
+export {default as ProductsManage} from "./ui/ProductsManage"
